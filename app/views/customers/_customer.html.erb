@@ -1,0 +1,7 @@
+<div class="customer">
+  <%= image_tag customer.image.variant(resize: "100x100") if customer.image.attached? %>
+  <h3><%= customer.full_name %></h3>
+  <p><strong>Phone:</strong> <%= customer.phone_number %></p>
+  <p><strong>Email:</strong> <%= customer.email %></p>
+  <p><strong>Notes:</strong> <%= customer.notes %></p>
+</div>
