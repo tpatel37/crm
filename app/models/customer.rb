@@ -1,15 +1,13 @@
 class Customer < ApplicationRecord
-  # Validations
-  validates :email, presence: true, uniqueness: true
-  validates :full_name, presence: true
-  validates :phone_number, presence: true
+  has_one_attached :image  # Add ActiveStorage image attachment
 
-  # Ransack settings for ActiveAdmin filters
+  # Define attributes that can be searched
   def self.ransackable_attributes(auth_object = nil)
-    ["created_at", "email", "full_name", "id", "notes", "phone_number", "updated_at"]
+    ["id", "full_name", "phone_number", "email", "notes", "created_at", "updated_at"]
   end
 
+  # Define associations that can be searched
   def self.ransackable_associations(auth_object = nil)
-    []
+    ["orders", "invoices", "addresses"]  # Replace with actual association names if needed
   end
 end
