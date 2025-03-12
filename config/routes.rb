@@ -19,4 +19,6 @@ Rails.application.routes.draw do
       get 'alphabetized'   # Route for customers sorted alphabetically
     end
   end
+  # Keep ActiveAdmin dashboard available
+  get "admin", to: "admin/dashboard#index"
 end
