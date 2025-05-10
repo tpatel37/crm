@@ -59,7 +59,7 @@ group :test do
   gem "selenium-webdriver"
 end
 
-gem "activeadmin", "~> 3.2"
+gem "activeadmin", "~> 3.3"
 gem 'devise'
 
 gem "sassc", "~> 2.4"
